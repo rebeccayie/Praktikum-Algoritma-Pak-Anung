@@ -1,0 +1,181 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "# Rebecca Gabriella Blessing Sihite\n",
+        "# 065002500042\n",
+        "# Program Menentukan Rata-rata Nilai\n",
+        "\n",
+        "\n",
+        "def konversi_nilai(huruf):\n",
+        "    if huruf == \"A\":\n",
+        "        return 4.00\n",
+        "    elif huruf == \"A-\":\n",
+        "        return 3.75\n",
+        "    elif huruf == \"B+\":\n",
+        "        return 3.50\n",
+        "    elif huruf == \"B\":\n",
+        "        return 3.00\n",
+        "    elif huruf == \"B-\":\n",
+        "        return 2.75\n",
+        "    elif huruf == \"C+\":\n",
+        "        return 2.50\n",
+        "    elif huruf == \"C\":\n",
+        "        return 2.00\n",
+        "    elif huruf == \"C-\":\n",
+        "        return 1.75\n",
+        "    elif huruf == \"D\":\n",
+        "        return 1.50\n",
+        "    elif huruf == \"E\":\n",
+        "        return 1.25\n",
+        "    else:\n",
+        "        return 0  # jika input tidak valid\n",
+        "\n",
+        "# Program Perhitungan dan Input Nilai\n",
+        "jumlah_nilai = 0\n",
+        "banyak_nilai = 0\n",
+        "\n",
+        "while True:\n",
+        "    huruf = input(\"Masukkan nilai: \").upper()\n",
+        "    if huruf == \"\":\n",
+        "        break\n",
+        "    nilai = konversi_nilai(huruf)\n",
+        "    if nilai == 0:\n",
+        "        print(\"Input tidak valid, coba lagi.\")\n",
+        "    else:\n",
+        "        print(\"Nilai =\", nilai)\n",
+        "        jumlah_nilai += nilai\n",
+        "        banyak_nilai += 1\n",
+        "\n",
+        "if banyak_nilai > 0:\n",
+        "    rata_rata = jumlah_nilai / banyak_nilai\n",
+        "    print(\"Rata-rata nilainya adalah:\", rata_rata)\n",
+        "else:\n",
+        "    print(\"Tidak ada nilai yang dimasukkan.\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "xUtNlelyzt_A",
+        "outputId": "d392bcd4-9d52-4701-c254-ac8616726e5c"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan nilai: A\n",
+            "Nilai = 4.0\n",
+            "Masukkan nilai: B\n",
+            "Nilai = 3.0\n",
+            "Masukkan nilai: C\n",
+            "Nilai = 2.0\n",
+            "Masukkan nilai: D\n",
+            "Nilai = 1.5\n",
+            "Masukkan nilai: E\n",
+            "Nilai = 1.25\n",
+            "Masukkan nilai: B-\n",
+            "Nilai = 2.75\n",
+            "Masukkan nilai: \n",
+            "Rata-rata nilainya adalah: 2.4166666666666665\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Rebecca Gabriella Blessing Sihite\n",
+        "# 065002500042\n",
+        "# Program Menghitung Tiket Masuk Kebun Binatang Berdasarkan Umur\n",
+        "\n",
+        "total = 0  #Menyimpan total harga tiket\n",
+        "\n",
+        "while True:\n",
+        "    umur_input = input(\"Masukkan umur: \")\n",
+        "    if umur_input == \"\":\n",
+        "        break\n",
+        "    umur = int(umur_input)\n",
+        "\n",
+        "    # Menentukan harga tiket berdasarkan umur\n",
+        "    if umur <= 2:\n",
+        "        harga = 0\n",
+        "        print(\"Gratis\")\n",
+        "    elif 3 <= umur <= 12:\n",
+        "        harga = 14\n",
+        "        print(\"Harga $14.00\")\n",
+        "    elif umur >= 65:\n",
+        "        harga = 18\n",
+        "        print(\"Harga $18.00\")\n",
+        "    else:\n",
+        "        harga = 23\n",
+        "        print(\"Harga $23.00\")\n",
+        "\n",
+        "    # Menambahkan harga ke total keseluruhan\n",
+        "    total += harga\n",
+        "    print(f\"Running total: {total:.2f}\")\n",
+        "\n",
+        "uang = float(input(\"Masukkan jumlah uang: \"))\n",
+        "kembalian = uang - total\n",
+        "print(f\"Running kembalian: {kembalian:.2f}\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "i3iuX-lREDUz",
+        "outputId": "528cf85b-34aa-429c-8386-dd3183592beb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Masukkan umur: 1\n",
+            "Gratis\n",
+            "Running total: 0.00\n",
+            "Masukkan umur: 10\n",
+            "Harga $14.00\n",
+            "Running total: 14.00\n",
+            "Masukkan umur: 20\n",
+            "Harga $23.00\n",
+            "Running total: 37.00\n",
+            "Masukkan umur: 70\n",
+            "Harga $18.00\n",
+            "Running total: 55.00\n",
+            "Masukkan umur: \n",
+            "Masukkan jumlah uang: 100\n",
+            "Running kembalian: 45.00\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "B0rETdlyIcmm"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
